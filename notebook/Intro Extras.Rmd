@@ -3,7 +3,7 @@ title: "Intro Extras"
 output: html_document
 date: "2024-02-22"
 ---
-
+ [which may be particularly costly when bio-telemetry requires the animals undergo surgery, @weaver_technology_2021]
 
 Scientific progress requires building upon past results, and therefore requires confidence in past results. 
 Issues arise when subsequent research is based upon weak foundations --i.e., studies with a limited capacity to be replicated because of questionable practices or over-generalisation.

@@ -1,0 +1,37 @@
+---
+title: "Conclusions"
+output: html_document
+date: "2024-10-17"
+---
+
+The motivation for this project was to determine whether the results of past habitat selection studies are reliable, given the wide breadth of analysis options available to researchers, and directly apply that to a set of snake movement case studies.
+Previous examination so herpetofauna spatial ecology revealed that methods are seldom reported to a sufficient level to account for differences in analysis when comparing even simpler metrics of animal movement.
+Therefore, comparisons or meta-analyses of habitat preference may be similarly impacted, with methodological differences obscuring true differences.
+For older studies, we also have more limited scope to re-analyse data due to very low rates of data archiving or access <!-- crane paper -->.
+This is rapidly being addressed in movement ecology, with the use of dedicated repositories such as movebank, and greater adoption of generic repositories.
+Shifts in publishing policies are reinforcing these requirements, enhancing the possibility of re-analyses in the future.
+Herpetology, specifically has scope to further improve as many journals are yet to formally adopt positions on transparent and open science practices <!-- TOP paper -->.
+
+Our assessments of simulated habitat selection and re-examination of real snake movement data suggests that the conclusions from past habitat selection studies are unlikely to be incorrect with regards to effect direction.
+This would indicate that the gaps in reporting and lack of data accessibility do not prohibit the results from these older studies being used to inform future study design and conservation decisions, so long as selection/no-selection is all the information required.
+However, in situations where the strength of selection is required, for example meta-analyses or prediction, the results of habitat selection should be carefully interpreted as analysis choices can dramatically alter the strength of effects.
+In these situations reanalysis of primary data is likely preferable, as that will allow confident direct comparisons and tailoring of analysis to ensure the research question is tackled directly.
+
+Going forward, the data quantity improvements in movement ecology will lessen the impact of analysis choice for determining broad general assessments of habitat selection.
+We have seen in almost all presented analysis here that agreement between estimates improves with more data.
+However, for many species the improves in data quantity may be slower to materialise.
+Snakes are a prime example, whose body layout prohibits the deployment of larger telemetry devices.
+While there are ongoing efforts to miniaturise GPS devices, there remains difficult regarding attachment and battery life.
+For now, VHF and manual tracking seems likely to continue for snakes in the immediate future.
+Therefore, the need to compare results from studies with differing tracking regimes and downstream analysis will remain.
+
+Much of the work here was tailored to VHF and snake tracking, where tracking frequency and duration may be more driven by external factors (e.g., equipment failure, weather, available work hours) than study design.
+Arguably, as with the case of more usable/affordable GPS devices compared to VHF, the findings here will diminish in relevance as new methods are developed that use the underlying data structure to estimate habitat selection.
+These methods are better at connecting small scale movements to large scale patterns of species occurrence, either by integrating more mechanistic information or using mathematical approaches that are scale independent.
+However, these methods will not enable easy comparison with previous results if that data is not available for reanalysis.
+Given the monetary and welfare costs of tracking animals, replication of field studies for many species are unlikely to be justifiable.
+We are left in a position where we need to maximise the existing data, or where that has been lost to data entropy, the reported results of studies.
+Hopefully the multiverse explorations here present something to calibrate the comparisons of older results by, and better highlight how much variation can stem from a single examination of species habitat selection (even when using the same dataset).
+
+
+
