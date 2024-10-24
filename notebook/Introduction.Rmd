@@ -1,0 +1,84 @@
+---
+title: "Introduction"
+output: html_document
+date: "2024-02-22"
+---
+
+Scientific progress requires building upon past results, and therefore requires confidence in past results. 
+Issues arise when subsequent research is based upon weak foundations --i.e., studies with a limited capacity to be replicated because of questionable practices or over-generalisation.
+<!-- example here? -->
+Early significant results can dictate the direction of research and grow resistant to later contradictory results [@barto_dissemination_2012]; therefore, early diagnoses of overly confident results or previously unknown sources of variation becomes a priority.
+
+In medical fields, a lack of replicability comes with direct monetary and well-being costs [@freedman_economics_2015], as well as stoking fears that the lack of replicability feeds distrust of science more generally [@anvari_replicability_2018].
+Like the medical field, ecological studies can come with well-being costs to the study subjects [e.g., direct surgery/marking of the animal @Reinert1982; @Winne2006], as well as impacts on stakeholders stemming from management decisions.
+The welfare costs are heightened when animals are required to be captured and have some bio-telemetry devices attached [sometimes surgically, @weaver_technology_2021].
+Therefore, maximising replicability in ecology is key to minimising research waste [@grainger_evidence_2019] and the negative impacts on study subjects and systems.
+
+The reasons leading to a replication not matching the results of an original study can be numerous.
+The variation between final results can be considered originating from six sources of uncertainty/variation [Table \@ref(tab:sourcesVariation), @hoffmann_multiplicity_2021].
+While natural random variation between samples is a candidate, sampling variation and even biases in samples is well recognised [@farrar_its_2021; @webster_how_2020].
+In other cases, the cause behind the variability in results may be hard to diagnose [@breznau_observing_2021], or will be less likely to be questioned because of the agreement with existing theory [@gelman_garden_2013].
+However, what remains clearer is what researchers see as the cause.
+Many point to flaws in the scientific environment that researchers work in, potentially leading to non-ideal decisions in the post-data-collection stages of research [@baker_1500_2016].
+The key detrimental aspect of the research environment identified is the pressure to publish, and the resulting secondary pressures to prioritise novelty and selectively report to achieve a clean narrative [@forstmeier_detecting_2017; @vinkers_use_2015; @brembs_reliable_2019; @cassey_survey_2004; @jennions_publication_2002; @oboyle_chrysalis_2014].
+
+
+```{r sourcesVariationPrep, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+library(dplyr)
+
+variationTable <- tribble(
+  ~Origin, ~Details, ~Example,
+  "Measurement", "Randomness from the act of measuring", "Measurement error stemming from imperfect precision or accuracy",
+  "Data preprocessing", "Decisions on data inclusion/exclusion and transforming", "Differing thresholds for what counts as outlying",
+  "Parameter", "Decisions on which parameters used as covariates/predictors", "Differing thresholds on acceptable covariance of predictors",
+  "Model", "Decisions on model structure and specification", "Model formulation and specification of random effects",
+  "Method", "Decisions on method choice and parameterisation", "Choosing an overarching GLMM over a series of T-tests",
+  "Sampling", "Randomness as a result of sampling a wider population",  "Sampling from a wider population results in different samples"
+)
+```
+
+```{r sourcesVariation, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(variationTable,
+             format = "latex",
+             align = "lcc",
+             vline = "",
+             toprule = "",
+             # midrule = "",
+             linesep = "",
+             bottomrule = "",
+             caption = "The potential sources leading to variation in results (Hoffmann et al., 2021).") %>%
+  kableExtra::kable_styling(font_size = 8, latex_options = "scale_down")
+
+```
+
+There are a suite of questionable options for researchers to massage results to something more publishable [@fraser_questionable_2018].
+They chiefly come in three forms: HARKing, cherry-picking, and p-hacking.
+Hypothesising After Results Known (HARKing) is where the research can present the results as a confirmatory result, despite originally there being no or contrary hypothesis.
+HARKing can sometimes be further enabled and rationalised by hindsight bias, where unexpected results are perceived as more likely once they have been observed [@forstmeier_detecting_2017; @gelman_garden_2013].
+Cherry-picking is the removal or non-reporting of data points or (co-)variables, that did not yield significant results.
+P-hacking is the repeated use of statistical tests, with different settings, to achieve statistical significance.
+Arguably, the existence of p-hacking is enabled by an over-reliance on p-value thresholds, rather than flexible p-value thresholds that are predefined based on effect size of interest, sample size, and desired accuracy of estimation [@lakens_justify_2018].
+
+For any of these questionable practices to be of use there must be adequate flexibility in how data is processed and analysed.
+Decisions (or researcher degrees of freedom) concerning data preprocessing, parameter, model, and method selection are likely to be particularly key in questionable research practices.
+Therefore, we may expect that in disciplines with more study flexibility during those stages of research contain greater scope for questionable practices.
+Quantifying the potential for researchers choice (i.e., degrees of freedom) would be a valuable step in identifying areas for heightened awareness of questionable practices.
+
+A subset of ecology that may be particularly difficult to execute direct replications of is movement ecology.
+One on hand researchers should want to avoid the repeated well being costs of bio-telemetry based tracking of animals (e.g., weight compensation in tagged birds @portugal_externally_2022). 
+The other hand movement ecology, specifically animal movement tracking, has exploded in terms of technology and methods in the past 20 years leaving researchers with a new wealth of devices and approaches to choose from [@joo_recent_2022].
+As the field charges forward to new exciting horizons, it would be prudent to re-examine the past studies to assess how much can be built upon and what should be re-assessed.
+While re-assessments can be somewhat limited by resistance to data sharing [@tedersoo_data_2021; @miyakawa_no_2020] and data loss as it ages [@vines_availability_2014], there are visible improvements in movement ecology with movement data specific repositories enabling data protection, re-use and sharing [@kays_movebank_2022].
+Such retroactive assessment is an attractive option when other methods to explore false positive rates [@hoffmann_multiplicity_2021], such as preregistration and registered reports [@kaplan_likelihood_2015; @scheel_excess_2021], will require more time to yield results.
+
+One approach to retro-actively explore the impacts of research choices is to construct a multiverse of analysis choices.
+Such a multiverse consists of alternative combinations analysis decisions that are all aimed at answering the same research question [@rijnhart_assessing_2021; @simonsohn_specification_2020; @dragicevic_increasing_2019].
+Multiverse analysis presents an avenue to explore causes of variation between studies without the additional costs of practical studies, while also being capable of exploring data processing decisions that may not have immediately apparent impacts on final results.
+
+To provide a baseline for multiverse explorations of real animal movement data, we first constructed a simulated scenario to determine the effectiveness of habitat selection analyses to recover a known "true" habitat selection.
+For the data of this simulated scenario, we created a agent-based animal model that simulates natural appearing movement patterns, with a known underlying preference for a certain habitat (Chapter 1).
+Following the generation of a simulated suite of animals of several species-archetypes, we applied a multiverse of habitat selection analyses looking at both individual (Chapter 2) and population level habitat selection (Chapter 3).
+These multiverses contained various different approaches to determining habitat selection and varied the choices within each approach.
+Using specification curves and Bayesian regression models, we examined the thousands of resulting habitat selection estimates to determine whether particular analytical decisions were more likely to lead to incorrect or outlying estimates. 
+Finally, we applied this same multiverse to determine whether research analysis choices would be sufficient to change the conclusions of previously published studies (Chapter 4).
+We selected four snake movement case studies from Northeast Thailand, where all the snake species are involved in some form of human-snake conflict.
